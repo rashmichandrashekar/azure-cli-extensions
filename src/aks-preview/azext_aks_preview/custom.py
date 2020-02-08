@@ -913,7 +913,6 @@ def aks_create(cmd,     # pylint: disable=too-many-locals,too-many-statements,to
                 resource_name=name,
                 parameters=mc,
                 custom_headers=headers)
-
             # adding a wait here since we rely on the result for role assignment
             result = LongRunningOperation(cmd.cli_ctx)(result)
 
@@ -2108,7 +2107,6 @@ def aks_enable_addons(cmd, client, resource_group_name, name, addons, workspace_
 
     if 'omsagent' in instance.addon_profiles:
         _ensure_container_insights_for_monitoring(cmd, instance.addon_profiles['omsagent'])
-
     # send the managed cluster representation to update the addon profiles
     result = sdk_no_wait(
         no_wait, client.create_or_update,
