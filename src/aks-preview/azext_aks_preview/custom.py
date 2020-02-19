@@ -2114,7 +2114,6 @@ def aks_enable_addons(cmd, client, resource_group_name, name, addons, workspace_
 
     if 'omsagent' in instance.addon_profiles:
         _ensure_container_insights_for_monitoring(cmd, instance.addon_profiles['omsagent'])
-
     # send the managed cluster representation to update the addon profiles
     result = sdk_no_wait(
         no_wait, client.create_or_update,
