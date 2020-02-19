@@ -960,7 +960,7 @@ def aks_create(cmd,     # pylint: disable=too-many-locals,too-many-statements,to
                 )
 
                 _add_monitoring_role_assignment(result, cluster_resource_id, cmd)
-                
+
             return result
         except CloudError as ex:
             retry_exception = ex
